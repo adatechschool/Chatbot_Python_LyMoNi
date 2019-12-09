@@ -10,7 +10,8 @@ port = 13
 client.connect((host, port))
 
 #transmission of the information
-info = 'Hello world'
+
+info = input("Press 'stop' to close the server")
 
 client.send(info.encode())
 information = client.recv(1024)

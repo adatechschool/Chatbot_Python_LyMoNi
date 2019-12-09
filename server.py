@@ -14,5 +14,12 @@ while True:
         data = connection.recv(1024)
         if not data: break
         connection.send(data)
+        # print(data.decode())
+    data = data.decode()
+    if data[0:3] == 'stop': #"data" is not exiting the while loop
+        print(data.decode())
+        break
     connection.close()
+
+print("Server is closed.")
 server.close()
