@@ -1,10 +1,10 @@
 import operator
 
-commands = ['/math', '/weather']
+commands = ['/math', '/help']
 
-def math(str):
+def math(*args):
 
-    str = str.split()
+    str = args[0].split()
 
     ops = {
         '+': operator.add,
@@ -12,6 +12,7 @@ def math(str):
         '**': operator.pow,
         '*': operator.mul,
         '/': operator.truediv,
+        '%': operator.mod,
     }
 
     oper = str[1]
@@ -24,14 +25,17 @@ def math(str):
     # print(str)
     # return str[]
 
+def help(*args):
+    print('hey')
+    return 'banana'
+
 def tools(tool):
 
     switcher = {
         '/math':  math,
+        '/help': help,
     }
-    if len(tool) <= 1:
-        return "You need at least a list length of 2"
-    output = switcher[tool[0]](tool[1])
+    output = switcher[tool[0]](tool[1]) #, 2
     try:
         output = str(output)
     except:
