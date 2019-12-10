@@ -11,8 +11,12 @@ client.connect((host, port))
 
 #transmission of the information
 
-info = input("Press 'stop' to close the server")
+print("Type 'stop' to close the connection \n")
 
-client.send(info.encode())
-information = client.recv(1024)
-print(information.decode())
+while True:
+    info = input('>> ')
+    client.send(info.encode())
+    information = client.recv(1024)
+    if information.decode() == 'stop':
+        break
+    print(information.decode())

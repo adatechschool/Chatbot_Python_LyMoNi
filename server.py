@@ -1,4 +1,5 @@
 import socket
+import tools as tls
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -10,16 +11,24 @@ server.listen() #paramter? -> 5
 while True:
     connection, address = server.accept()
     print('Client is connected to: ', address)
+
     while True:
         data = connection.recv(1024)
-        if not data: break
-        connection.send(data)
-        # print(data.decode())
-    data = data.decode()
-    if data[0:3] == 'stop': #"data" is not exiting the while loop
-        print(data.decode())
-        break
-    connection.close()
 
-print("Server is closed.")
-server.close()
+        data = data.decode()
+
+        comm = data.split(' ', 1)
+
+        if comm[0] in tls.commands:
+            tls.tools(data) 
+
+        if data == 'stop':
+            connection.send(data)
+            print('exit')
+            break
+
+        connection.send(data.encode())
+
+    connection.close()
+    if connection.fileno() == -1: # check if client connection is closed
+        print("Client connection closed.")
