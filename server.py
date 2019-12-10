@@ -20,10 +20,10 @@ while True:
         comm = data.split(' ', 1)
 
         if comm[0] in tls.commands:
-            tls.tools(data) 
+            data = tls.tools(comm)
 
         if data == 'stop':
-            connection.send(data)
+            connection.send(data.encode())
             print('exit')
             break
 
