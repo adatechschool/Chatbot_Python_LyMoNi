@@ -1,7 +1,4 @@
-import configparser
-import requests
-import sys
-import os
+import configparser, requests, sys, os
 
 cnf_file = os.path.join(os.path.dirname(__file__), 'config.ini')
 
@@ -17,8 +14,9 @@ def get_weather(location, api):
     return r.json()
 
 def weather(*args):
+    if None in args:
+        return 'You have to chose a city.'
     api = get_api_key()
     city = args[0]
-
     data = get_weather(city, api)
     return data
