@@ -1,0 +1,7 @@
+weather[1] --> main[1]
+main[3] --> temp[0], feels_like[1], temp_max[3], temp_min[2], humidity[5]
+wind[5] --> speed[0]
+sys[8] --> country[2], name[7]
+
+
+{'coord': {'lon': 2.35, 'lat': 48.86}, 'weather': [{'id': 804, 'main': 'Clouds', 'description': 'overcast clouds', 'icon': '04d'}], 'base': 'stations', 'main': {'temp': 7.16, 'feels_like': 1.67, 'temp_min': 6.11, 'temp_max': 8, 'pressure': 1008, 'humidity': 75}, 'visibility': 10000, 'wind': {'speed': 5.7, 'deg': 210}, 'clouds': {'all': 100}, 'dt': 1576078792, 'sys': {'type': 1, 'id': 6540, 'country': 'FR', 'sunrise': 1576049621, 'sunset': 1576079634}, 'timezone': 3600, 'id': 2988507, 'name': 'Paris', 'cod': 200}
