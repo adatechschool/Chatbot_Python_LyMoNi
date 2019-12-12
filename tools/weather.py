@@ -14,28 +14,20 @@ def get_weather(location, api):
     return r.json()
 
 def constuct_report(data):
-    main = list(data)
+    # weather_data = list(data)
 
-    main_index = [1, 3, 5, 8]
-    weather_index = [1]
-    main_index = [0, 1, 2, 3, 5]
-    wind_index = [0]
-    sys_index = [2, 7]
+    weather_data = ['weather', 'main', 'wind', 'sys']
+    weather_exact = ['main', 'temp', 'feels_like', 'temp_max', 'temp_min', 'humidity', 'speed', 'country', 'name']
 
-    main_l = []
+    print(data['weather']['main'])
 
-    for i in main_index:
-        main_l.append(main[i])
 
-    for i in weather_index:
-        weather_l = list(data[main_l[0]])
+    for i in weather_data:
+        if i in data:
+            for y in weather_exact:
+                if y in data[i]:
+                    print(data[i][y])
 
-    for i in main_l:
-        print(i)
-        # for x in weather_l:
-        #     print()
-            #print(data[i][x])
-    # print(data[main_l[0]][weather_l[i]])
 
 def weather(*args):
     if None in args:

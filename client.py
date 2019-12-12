@@ -3,7 +3,7 @@ import socket
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 #ip and port of the server
-host = '127.0.0.1'
+host = '
 port = 13
 
 #connection to the server
