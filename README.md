@@ -8,8 +8,8 @@ Nous espérons que nos utilisateurs et notre Chatbot deviendont potes !
 
 * **Ce que l'on souhaite réaliser :**
 
-* **Ce que l'on eenvisage :**
+* **Ce que l'on envisage :**
 
-- heure/date
-- calcules
-- création de fichier / stockage
+    - heure/date
+    - calculs
+    - création de fichier / stockage
